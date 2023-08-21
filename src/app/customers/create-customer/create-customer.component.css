@@ -1,0 +1,32 @@
+.container-component {
+  height: 100%;
+}
+
+.group-container {
+  display: flex;
+  margin: 2.5rem auto 0 auto;
+  min-height: 83.333333%;
+  width: 66.666667%;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.form-container {
+  justify-self: start;
+  padding: 1rem 2rem;
+  width: 50%;
+}
+
+.form-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.image-container {
+  justify-self: end;
+  width: 50%;
+  background: center / cover url('/assets/img/building_1920-1280.jpg');
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}

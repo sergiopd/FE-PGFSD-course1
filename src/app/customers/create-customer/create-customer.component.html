@@ -1,0 +1,12 @@
+<div class="container-component">
+  <div class="group-container">
+    <form #addCustomer="ngForm" class="form-container">
+      <h3 class="form-title">Create a client</h3>
+      <app-form-customer></app-form-customer>
+      <button type="submit" [disabled]="!addCustomer.form.valid">Create
+        customer</button>
+    </form>
+    <div class="image-container">
+    </div>
+  </div>
+</div>
