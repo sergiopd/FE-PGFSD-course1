@@ -1,10 +1,10 @@
 .input-container {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .input-label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
@@ -12,5 +12,13 @@
 }
 
 .input-field {
+  display: block;
+  padding: 0.625rem;
+  width: 100%;
   background-color: rgb(249 250 251);
+  border: 1px solid rgb(209 213 219);
+  border-radius: 0.5rem;
+  color: rgb(17 24 39);
+  font-size: 0.875rem/* 14px */;
+  line-height: 1.25rem/* 20px */;
 }

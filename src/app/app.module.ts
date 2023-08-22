@@ -12,6 +12,7 @@ import { CreateMeetingComponent } from './meetings/create-meeting/create-meeting
 import { EditMeetingComponent } from './meetings/edit-meeting/edit-meeting.component';
 import { ViewAllMeetingsComponent } from './meetings/view-all-meetings/view-all-meetings.component';
 import { ViewAllActivityComponent } from './customers/view-all-activity/view-all-activity.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ViewAllActivityComponent } from './customers/view-all-activity/view-all
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
