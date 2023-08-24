@@ -1,0 +1,68 @@
+.container-customer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-content: start;
+}
+
+.all-customers-container {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 0 0 30%;
+  justify-content: start;
+  align-content: center;
+  padding: 0 1.5rem;
+  overflow-y: auto;
+}
+
+.single-customer-container {
+  margin: 1rem auto 0 auto;
+  padding: .5rem .5rem;
+  width: 100%;
+  background-color: white;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.single-customer-container:hover {
+  cursor: pointer;
+  background-color: aliceblue;
+}
+
+.customer-container {
+  flex: 1 0 auto;
+  margin: 0 auto;
+  padding: 0 10%;
+}
+
+.form-container {
+  margin: 2.5rem auto 0 auto;
+  padding: 1rem 2rem;
+  width: 66.666667%;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.button-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.button-action {
+  margin-right: 0 0.5rem 0.5rem 0;
+  padding: 0.625rem 1.25rem;
+  background-image: linear-gradient(to right, rgb(195, 195, 195), rgb(175, 175, 175));
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+}
+
+.button-action:hover {
+  background-image: linear-gradient(to left, rgb(163, 163, 163), rgb(158, 158, 158));
+}
+
+.button-action[disabled] {
+  background-image: linear-gradient(to left, rgb(236, 236, 236), rgb(233, 233, 233));
+}
