@@ -13,19 +13,11 @@ export const TABS = [
     link: 'customer/view'
   },
   {
-    legend: 'Review all customer activity',
-    link: 'activity/view',
-  },
-  {
     legend: 'Add a meeting',
-    link: 'meeting/add',
+    link: 'meeting',
   },
   {
-    legend: 'Edit a meeting',
-    link: 'meeting/edit',
-  },
-  {
-    legend: 'View all meetings info',
+    legend: 'View meeting info',
     link: 'meetings/view'
   },
 ]
