@@ -1,1 +1,16 @@
-<p>create-meeting works!</p>
+<div class="container-component">
+  <div class="group-container">
+    <form #addMeetingForm="ngForm" class="form-container"
+      (ngSubmit)="addMeeting(addMeetingForm)">
+      <h3 class="form-title">Create a meeting schedule</h3>
+      <app-form-meeting #meetingForm></app-form-meeting>
+      <div class="button-container">
+        <button class="button-submit" type="submit"
+          [disabled]="!addMeetingForm.form.valid">Create
+          meeting</button>
+      </div>
+    </form>
+    <div class="image-container">
+    </div>
+  </div>
+</div>

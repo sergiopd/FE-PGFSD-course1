@@ -1,0 +1,56 @@
+.container-component {
+  height: 100%;
+}
+
+.group-container {
+  display: flex;
+  margin: 2.5rem auto 0 auto;
+  min-height: 83.333333%;
+  width: 66.666667%;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.form-container {
+  justify-self: start;
+  padding: 1rem 2rem;
+  width: 50%;
+}
+
+.form-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.image-container {
+  justify-self: end;
+  width: 50%;
+  background: center / cover url('/assets/img/building_1920-1280.jpg');
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem auto 0 auto;
+}
+
+.button-submit {
+  margin-right: 0 0.5rem 0.5rem 0;
+  padding: 0.625rem 1.25rem;
+  background-image: linear-gradient(to right, rgb(195, 195, 195), rgb(175, 175, 175));
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+}
+
+.button-submit:hover {
+  background-image: linear-gradient(to left, rgb(163, 163, 163), rgb(158, 158, 158));
+}
+
+.button-submit[disabled] {
+  background-image: linear-gradient(to left, rgb(236, 236, 236), rgb(233, 233, 233));
+}
