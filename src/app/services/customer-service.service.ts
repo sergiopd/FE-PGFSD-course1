@@ -15,14 +15,6 @@ export class CustomerService {
     createCustomer: 'addCustomer',
     updateCustomer: 'updateCustomer',
     deleteCustomer: 'deleteCustomer/',
-    getAllActivity: 'getActivity',
-    getActivity: 'getActivity/:email',
-    saveActivity: 'saveActivity',
-    getAllMeetings: 'getMeetings',
-    getMeeting: 'getMeeting/:email',
-    createMeeting: 'addMeeting',
-    updateMeeting: 'updateMeeting',
-    deleteMeeting: 'deleteMeeting/:meetId'
   }
 
   public getAllCustomers$(): Observable<Customer[]> {
@@ -55,27 +47,6 @@ export class CustomerService {
 
   public deleteCustomer$(email: string) {
     return this.http.delete(`${this.host}${this.urls.deleteCustomer}${email}`)
-      .pipe(
-        catchError(this.handleError)
-      );
-  }
-
-  public getAllActivity$(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(`${this.host}${this.urls.getAllCustomers}`)
-      .pipe(
-        catchError(this.handleError)
-      );
-  }
-
-  public getActivity$(email: string): Observable<Customer> {
-    return this.http.get<Customer>(`${this.host}${this.urls.getCustomer}${email}`)
-      .pipe(
-        catchError(this.handleError)
-      );
-  }
-
-  public saveActivity$(customer: Customer) {
-    return this.http.post(`${this.host}${this.urls.createCustomer}`, customer)
       .pipe(
         catchError(this.handleError)
       );
