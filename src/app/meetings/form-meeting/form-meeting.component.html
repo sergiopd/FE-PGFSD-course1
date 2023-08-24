@@ -1,0 +1,40 @@
+<div class="input-container">
+  <label for="name" class="input-label">Your name</label>
+  <input type="text" id="name" name="customerName" class="input-field "
+    placeholder="Please enter your full name" [(ngModel)]="meeting.customerName"
+    autocomplete="name" required>
+</div>
+<div class="input-container">
+  <label for="email" class="input-label">Your email</label>
+  <input type="email" id="email" name="email" class="input-field"
+    placeholder="Please enter your email" [(ngModel)]="meeting.email"
+    autocomplete="email" required [disabled]="isEditMeeting"
+    [ngClass]="{ 'email-field': isEditMeeting }">
+</div>
+<div class="input-container">
+  <label for="meetTitle" class="input-label">Meeting Topic</label>
+  <input type="text" id="meetTitle" name="meetTitle" class="input-field"
+    placeholder="Please enter the meet topic" [(ngModel)]="meeting.meetTitle"
+    autocomplete="name" required>
+</div>
+<div class="input-container">
+  <label for="meetingAttendees" class="input-label">Number of people</label>
+  <input type="text" id="meetingAttendees" name="meetingAttendees"
+    class="input-field" placeholder="Please enter the number of people"
+    [(ngModel)]="meeting.meetingAttendees" autocomplete="address-level1">
+</div>
+<div class="input-container">
+  <label for="date" class="input-label">Date</label>
+  <input type="date" id="date" name="date" class="input-field"
+    [(ngModel)]="meeting.date" autocomplete="name" required>
+</div>
+<div class="input-container">
+  <label for="startAt" class="input-label">Start at</label>
+  <input type="time" id="startAt" name="startAt" class="input-field"
+    [(ngModel)]="meeting.startAt" autocomplete="name" required>
+</div>
+<div class="input-container">
+  <label for="endAt" class="input-label">End at</label>
+  <input type="time" id="endAt" name="endAt" class="input-field"
+    [(ngModel)]="meeting.endAt" autocomplete="name" required>
+</div>
