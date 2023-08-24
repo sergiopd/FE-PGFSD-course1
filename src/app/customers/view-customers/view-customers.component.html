@@ -1,0 +1,26 @@
+<div class="container-customer">
+  <div class="all-customers-container">
+    <ng-container *ngIf="customers">
+      <div class="single-customer-container"
+        *ngFor="let customerReply of customers"
+        (click)="getCustomer(customerReply.email)">
+        <div><b>Name:</b> {{ customerReply.customerName }}</div>
+        <div><b> Email:</b> {{ customerReply.email }}</div>
+        <div><b> Address:</b> {{ customerReply.address }}</div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="customer-container">
+    <form #viewCustomerForm="ngForm" class="form-container">
+      <h3 class="form-title">Create a client</h3>
+      <app-form-customer #customerForm></app-form-customer>
+      <div class="button-container">
+        <button class="button-action" type="button"
+          (click)="updateCustomer()">Update customer</button>
+        <button class="button-action" type="button"
+          (click)="deleteCustomer(customerForm.customer.email, viewCustomerForm)">Delete
+          customer</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -32,8 +32,8 @@ export class CustomerService {
       );
   }
 
-  public getCustomer$(email: string): Observable<Customer> {
-    return this.http.get<Customer>(`${this.host}${this.urls.getCustomer}${email}`)
+  public getCustomer$(email: string): Observable<Customer[]> {
+    return this.http.get<Customer[]>(`${this.host}${this.urls.getCustomer}${email}`)
       .pipe(
         catchError(this.handleError)
       );
