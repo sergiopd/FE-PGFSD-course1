@@ -14,8 +14,9 @@ import { Customer } from 'src/app/models/customers';
 export class FormCustomerComponent {
   public customer: Customer = {
     email: '',
-    name: '',
+    customerName: '',
     address: '',
-    password: '',
+    customerPassword: '',
   }
+  public isEditCustomer: boolean = false;
 }
