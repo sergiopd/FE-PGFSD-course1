@@ -9,9 +9,9 @@ import { AppComponent } from './app.component';
 import { FormCustomerComponent } from './customers/form-customer/form-customer.component';
 import { CreateCustomerComponent } from './customers/create-customer/create-customer.component';
 import { ViewCustomersComponent } from './customers/view-customers/view-customers.component';
-import { ViewAllActivityComponent } from './customers/view-all-activity/view-all-activity.component';
 import { CreateMeetingComponent } from './meetings/create-meeting/create-meeting.component';
 import { ViewAllMeetingsComponent } from './meetings/view-all-meetings/view-all-meetings.component';
+import { FormMeetingComponent } from './meetings/form-meeting/form-meeting.component';
 
 @NgModule({
   declarations: [
@@ -19,9 +19,9 @@ import { ViewAllMeetingsComponent } from './meetings/view-all-meetings/view-all-
     FormCustomerComponent,
     CreateCustomerComponent,
     ViewCustomersComponent,
-    ViewAllActivityComponent,
     CreateMeetingComponent,
     ViewAllMeetingsComponent,
+    FormMeetingComponent,
   ],
   imports: [
     BrowserModule,

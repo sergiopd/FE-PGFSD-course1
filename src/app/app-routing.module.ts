@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateCustomerComponent } from './customers/create-customer/create-customer.component';
 import { CreateMeetingComponent } from './meetings/create-meeting/create-meeting.component';
-import { ViewAllActivityComponent } from './customers/view-all-activity/view-all-activity.component';
 import { ViewAllMeetingsComponent } from './meetings/view-all-meetings/view-all-meetings.component';
 import { ViewCustomersComponent } from './customers/view-customers/view-customers.component';
 
@@ -19,10 +18,6 @@ const routes: Routes = [
   {
     path: 'customer/view',
     component: ViewCustomersComponent
-  },
-  {
-    path: 'activity/view',
-    component: ViewAllActivityComponent
   },
   {
     path: 'meeting',
