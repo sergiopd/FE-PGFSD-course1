@@ -8,7 +8,8 @@
   <label for="email" class="input-label">Email</label>
   <input type="email" id="email" name="email" class="input-field"
     placeholder="Please enter your email" [(ngModel)]="customer.email"
-    autocomplete="email" required [disabled]="isEditCustomer">
+    autocomplete="email" required [disabled]="isEditCustomer"
+    [ngClass]="{ 'email-field': isEditCustomer }">
 </div>
 <div class="input-container">
   <label for="address" class="input-label">Address</label>
