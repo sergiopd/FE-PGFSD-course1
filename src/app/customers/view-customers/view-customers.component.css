@@ -26,6 +26,7 @@
 
 .single-customer-container:hover {
   cursor: pointer;
+  background-color: aliceblue;
 }
 
 .customer-container {
