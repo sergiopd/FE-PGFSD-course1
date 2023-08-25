@@ -3,24 +3,25 @@
     <ng-container *ngIf="meetings">
       <div class="single-customer-container"
         *ngFor="let meetingReply of meetings"
-        (click)="getMeeting(meetingReply.email)">
+        (click)="getMeeting(meetingReply.meetID)">
         <div><b>Name:</b> {{ meetingReply.customerName }}</div>
         <div><b> Email:</b> {{ meetingReply.email }}</div>
         <div><b> Meeting title:</b> {{ meetingReply.meetTitle }}</div>
-        <div><b> Date:</b> {{ meetingReply.date }} <b>| From:</b> {{
-          meetingReply.startAt }} <b>| To:</b> {{ meetingReply.startAt }}</div>
+        <div><b> Date:</b> {{ meetingReply.meetDate | date:'dd/MM/yy' }} <b>|
+            From:</b> {{
+          meetingReply.startAt }} <b>| To:</b> {{ meetingReply.endAt }}</div>
       </div>
     </ng-container>
   </div>
   <div class="customer-container">
-    <form #viewMeetingFormForm="ngForm" class="form-container">
+    <form #viewMeetingForm="ngForm" class="form-container">
       <h3 class="form-title">Edit meeting schedule</h3>
       <app-form-meeting #meetingForm></app-form-meeting>
       <div class="button-container">
         <button class="button-action" type="button"
           (click)="updateMeeting()">Update meeting</button>
         <button class="button-action" type="button"
-          (click)="deleteMeeting(meetingForm.meeting.email, viewMeetingFormForm)">Delete
+          (click)="deleteMeeting(meetingForm.meeting.meetID, viewMeetingForm)">Delete
           meeting</button>
       </div>
     </form>

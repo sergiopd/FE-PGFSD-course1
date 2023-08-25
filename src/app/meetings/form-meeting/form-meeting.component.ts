@@ -12,15 +12,7 @@ import { Meeting } from 'src/app/models/meetings';
   }]
 })
 export class FormMeetingComponent {
-  public meeting: Meeting = {
-    customerName: '',
-    email: '',
-    meetTitle: '',
-    meetingAttendees: 0,
-    date: '',
-    startAt: '',
-    endAt: '',
-    meetID: 0,
-  }
+  public meeting: Meeting = new Meeting('', '', '', '', '', '', 0, 0);
   public isEditMeeting: boolean = false;
+  public date: string = '';
 }
