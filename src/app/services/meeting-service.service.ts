@@ -14,10 +14,10 @@ export class MeetingService {
 
   private urls = {
     getAllMeetings: 'getMeetings',
-    getMeeting: 'getMeeting/:email',
+    getMeeting: 'getMeeting/',
     createMeeting: 'addMeeting',
     updateMeeting: 'updateMeeting',
-    deleteMeeting: 'deleteMeeting/:meetId'
+    deleteMeeting: 'deleteMeeting/'
   }
 
   public getAllMeetings$(): Observable<Meeting[]> {
@@ -27,8 +27,8 @@ export class MeetingService {
       );
   }
 
-  public getMeeting$(email: string): Observable<Meeting[]> {
-    return this.http.get<Meeting[]>(`${this.host}${this.urls.getMeeting}${email}`)
+  public getMeeting$(meetID: string): Observable<Meeting[]> {
+    return this.http.get<Meeting[]>(`${this.host}${this.urls.getMeeting}${meetID}`)
       .pipe(
         catchError(this.handleError)
       );
@@ -48,8 +48,8 @@ export class MeetingService {
       );
   }
 
-  public deleteMeeting$(email: string) {
-    return this.http.delete(`${this.host}${this.urls.deleteMeeting}${email}`)
+  public deleteMeeting$(meetID: string) {
+    return this.http.delete(`${this.host}${this.urls.deleteMeeting}${meetID}`)
       .pipe(
         catchError(this.handleError)
       );
