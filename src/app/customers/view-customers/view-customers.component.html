@@ -2,8 +2,8 @@
   <div class="all-customers-container">
     <ng-container *ngIf="customers">
       <div class="single-customer-container"
-        *ngFor="let customerReply of customers"
-        (click)="getCustomer(customerReply.email)">
+        *ngFor="let customerReply of customers; index as i;"
+        [id]="'customer-' + i" (click)="getCustomer(customerReply.email)">
         <div><b>Name:</b> {{ customerReply.customerName }}</div>
         <div><b> Email:</b> {{ customerReply.email }}</div>
         <div><b> Address:</b> {{ customerReply.address }}</div>
@@ -16,9 +16,9 @@
       <div id="edited-message" class="message">{{ message }}</div>
       <app-form-customer #customerForm></app-form-customer>
       <div class="button-container">
-        <button class="button-action" type="button"
+        <button id="update-customer-button" class="button-action" type="button"
           (click)="updateCustomer(viewCustomerForm)">Update customer</button>
-        <button class="button-action" type="button"
+        <button id="delete-customer-button" class="button-action" type="button"
           (click)="deleteCustomer(customerForm.customer.email, viewCustomerForm)">Delete
           customer</button>
       </div>

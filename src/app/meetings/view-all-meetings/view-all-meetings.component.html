@@ -2,8 +2,8 @@
   <div class="all-customers-container">
     <ng-container *ngIf="meetings">
       <div class="single-customer-container"
-        *ngFor="let meetingReply of meetings"
-        (click)="getMeeting(meetingReply.meetID)">
+        *ngFor="let meetingReply of meetings;, index as i;"
+        [id]="'meeting-' + i" (click)="getMeeting(meetingReply.meetID)">
         <div><b>Name:</b> {{ meetingReply.customerName }}</div>
         <div><b> Email:</b> {{ meetingReply.email }}</div>
         <div><b> Meeting title:</b> {{ meetingReply.meetTitle }}</div>
