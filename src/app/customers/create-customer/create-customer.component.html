@@ -3,9 +3,10 @@
     <form #addCustomerForm="ngForm" class="form-container"
       (ngSubmit)="addCustomer(addCustomerForm)">
       <h3 class="form-title">Create a client</h3>
+      <div id="added-message" class="message">{{ message }}</div>
       <app-form-customer #customerForm></app-form-customer>
       <div class="button-container">
-        <button class="button-submit" type="submit"
+        <button id="create-customer-button" class="button-submit" type="submit"
           [disabled]="!addCustomerForm.form.valid">Create
           customer</button>
       </div>

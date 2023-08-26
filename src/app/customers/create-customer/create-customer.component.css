@@ -18,9 +18,17 @@
 }
 
 .form-title {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.message {
+  margin-bottom: 0.5rem;
+  min-height: 1rem;
+  color: green;
+  font-size: 0.85rem;
+  line-height: 1rem;
 }
 
 .image-container {

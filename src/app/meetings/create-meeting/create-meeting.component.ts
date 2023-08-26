@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs';
 export class CreateMeetingComponent implements OnDestroy {
   @ViewChild(FormMeetingComponent) meetingForm!: FormMeetingComponent;
 
+  public message = '';
   private subscription = new Subscription();
 
   constructor(private meetingService: MeetingService) { }
@@ -23,7 +24,17 @@ export class CreateMeetingComponent implements OnDestroy {
 
   public addMeeting(form: NgForm) {
     this.meetingForm.meeting.meetDate = this.meetingForm.date;
-    this.subscription = this.meetingService.createMeeting$(this.meetingForm.meeting).subscribe();
+    this.subscription = this.meetingService.createMeeting$(this.meetingForm.meeting).subscribe({
+      error: (err: any) => {
+        window.alert(err);
+      },
+      complete: () => {
+        this.message = 'Meeting added successfully';
+        setTimeout(() => {
+          this.message = '';
+        }, 2_000);
+      }
+    });
     this.meetingForm.meeting = new Meeting('', '', '', '', '', '', 0, 0);
     form.reset();
   }

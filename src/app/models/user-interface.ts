@@ -5,11 +5,11 @@ export interface Tab {
 
 export const TABS = [
   {
-    legend: 'Create customer info',
+    legend: 'Add customer',
     link: 'customer'
   },
   {
-    legend: 'View customer info',
+    legend: 'View customers info',
     link: 'customer/view'
   },
   {
@@ -17,7 +17,7 @@ export const TABS = [
     link: 'meeting',
   },
   {
-    legend: 'View meeting info',
+    legend: 'View meetings info',
     link: 'meetings/view'
   },
 ]

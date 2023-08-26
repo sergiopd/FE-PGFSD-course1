@@ -15,6 +15,7 @@ export class ViewAllMeetingsComponent implements OnInit, OnDestroy {
 
   public meeting: Meeting = new Meeting('', '', '', '', '', '', 0, 0);
   public meetings: Meeting[] = [];
+  public message = '';
   private subscriptions = new Subscription();
 
   constructor(private meetingService: MeetingService) { }
@@ -37,24 +38,41 @@ export class ViewAllMeetingsComponent implements OnInit, OnDestroy {
   }
 
   public getMeeting(meetID: number) {
-    this.subscriptions.add(this.meetingService.getMeeting$(meetID.toString()).subscribe(
-      (customerReply) => {
+    this.subscriptions.add(this.meetingService.getMeeting$(meetID.toString()).subscribe({
+      next: (customerReply) => {
         this.meetingForm.meeting = customerReply[0];
         this.meetingForm.date = this.convertToString(customerReply[0].meetDate);
       }
-    )
+    })
     );
     this.meetingForm.isEditMeeting = true;
   }
 
-  public updateMeeting() {
+  public updateMeeting(form: NgForm) {
     this.meetingForm.meeting.meetDate = this.meetingForm.date;
-    this.subscriptions.add(this.meetingService.updateMeeting$(this.meetingForm.meeting).subscribe());
+    this.subscriptions.add(this.meetingService.updateMeeting$(this.meetingForm.meeting).subscribe({
+      complete: () => {
+        this.message = 'Meeting updated successfully';
+        setTimeout(() => {
+          this.message = '';
+        }, 2_000);
+        this.getMeetings();
+        form.reset();
+      }
+    }));
     this.getMeetings();
   }
 
   public deleteMeeting(meetID: number, form: NgForm) {
-    this.subscriptions.add();
+    this.subscriptions.add(this.meetingService.deleteMeeting$(meetID.toString()).subscribe({
+      complete: () => {
+        this.message = 'Meeting deleted successfully';
+        setTimeout(() => {
+          this.message = '';
+        }, 2_000);
+        this.getMeetings();
+      }
+    }));
     this.meetingForm.meeting = new Meeting('', '', '', '', '', '', 0, 0);
     form.reset();
     this.getMeetings();

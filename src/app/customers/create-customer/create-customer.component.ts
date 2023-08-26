@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs';
 export class CreateCustomerComponent implements OnDestroy {
   @ViewChild(FormCustomerComponent) customerForm!: FormCustomerComponent;
 
+  public message = '';
   private subscription = new Subscription();
 
   constructor(private customerService: CustomerService) { }
@@ -22,7 +23,17 @@ export class CreateCustomerComponent implements OnDestroy {
   }
 
   public addCustomer(form: NgForm) {
-    this.subscription = this.customerService.createCustomer$(this.customerForm.customer).subscribe();
+    this.subscription = this.customerService.createCustomer$(this.customerForm.customer).subscribe({
+      error: (err: any) => {
+        window.alert(err);
+      },
+      complete: () => {
+        this.message = 'User added successfully';
+        setTimeout(() => {
+          this.message = '';
+        }, 2_000);
+      }
+    });
     this.customerForm.customer = new Customer('', '', '', '');
     form.reset();
   }

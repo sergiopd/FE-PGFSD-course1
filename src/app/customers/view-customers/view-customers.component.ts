@@ -15,6 +15,7 @@ export class ViewCustomersComponent implements OnInit, OnDestroy {
 
   public customer: Customer = new Customer('', '', '', '');
   public customers: Customer[] = [];
+  public message = '';
   private subscriptions = new Subscription();
 
   constructor(private customerService: CustomerService) { }
@@ -38,19 +39,42 @@ export class ViewCustomersComponent implements OnInit, OnDestroy {
 
   public getCustomer(email: string) {
     this.subscriptions.add(this.customerService.getCustomer$(email)
-      .subscribe((customerReply) => {
-        this.customerForm.customer = customerReply[0];
+      .subscribe({
+        next: (customerReply) => {
+          this.customerForm.customer = customerReply[0];
+        }
       })
     );
     this.customerForm.isEditCustomer = true;
   }
 
-  public updateCustomer() {
-    this.subscriptions.add(this.customerService.updateCustomer$(this.customerForm.customer).subscribe());
+  public updateCustomer(form: NgForm) {
+    this.subscriptions.add(
+      this.customerService.updateCustomer$(this.customerForm.customer).subscribe({
+        complete: () => {
+          this.message = 'Customer updated successfully';
+          setTimeout(() => {
+            this.message = '';
+          }, 2_000);
+          this.getCustomers();
+          form.reset();
+        }
+      })
+    );
   }
 
   public deleteCustomer(email: string, form: NgForm) {
-    this.subscriptions.add(this.customerService.deleteCustomer$(email).subscribe());
+    this.subscriptions.add(
+      this.customerService.deleteCustomer$(email).subscribe({
+        complete: () => {
+          this.message = 'Customer deleted successfully';
+          setTimeout(() => {
+            this.message = '';
+          }, 2_000);
+          this.getCustomers();
+        }
+      })
+    );
     this.customerForm.customer = new Customer('', '', '', '');
     form.reset();
   }

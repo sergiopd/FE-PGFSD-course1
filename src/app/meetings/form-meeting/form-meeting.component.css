@@ -11,6 +11,13 @@
   color: rgb(17 24 39 / 1);
 }
 
+.inputs-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .input-field {
   display: block;
   padding: 0.625rem;
@@ -21,6 +28,10 @@
   color: rgb(17 24 39);
   font-size: 0.875rem/* 14px */;
   line-height: 1.25rem/* 20px */;
+}
+
+.row {
+  flex: 0 0 45%;
 }
 
 .email-field {

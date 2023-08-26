@@ -17,24 +17,28 @@
     placeholder="Please enter the meet topic" [(ngModel)]="meeting.meetTitle"
     autocomplete="name" required>
 </div>
-<div class="input-container">
-  <label for="meetingAttendees" class="input-label">Number of people</label>
-  <input type="text" id="meetingAttendees" name="meetingAttendees"
-    class="input-field" placeholder="Please enter the number of people"
-    [(ngModel)]="meeting.meetingAttendees" autocomplete="address-level1">
+<div class="inputs-container">
+  <div class="input-container row">
+    <label for="meetingAttendees" class="input-label">Number of people</label>
+    <input type="text" id="meetingAttendees" name="meetingAttendees"
+      class="input-field" placeholder="Please enter the number of people"
+      [(ngModel)]="meeting.meetingAttendees" autocomplete="address-level1">
+  </div>
+  <div class="input-container row">
+    <label for="meetDate" class="input-label">Date</label>
+    <input type="date" id="meetDate" name="meetDate" class="input-field"
+      [(ngModel)]="date" autocomplete="name" required>
+  </div>
 </div>
-<div class="input-container">
-  <label for="meetDate" class="input-label">Date</label>
-  <input type="date" id="meetDate" name="meetDate" class="input-field"
-    [(ngModel)]="date" autocomplete="name" required>
-</div>
-<div class="input-container">
-  <label for="startAt" class="input-label">Start at</label>
-  <input type="time" id="startAt" name="startAt" class="input-field"
-    [(ngModel)]="meeting.startAt" autocomplete="name" required>
-</div>
-<div class="input-container">
-  <label for="endAt" class="input-label">End at</label>
-  <input type="time" id="endAt" name="endAt" class="input-field"
-    [(ngModel)]="meeting.endAt" autocomplete="name" required>
+<div class="inputs-container">
+  <div class="input-container row">
+    <label for="startAt" class="input-label">Start at</label>
+    <input type="time" id="startAt" name="startAt" class="input-field"
+      [(ngModel)]="meeting.startAt" autocomplete="name" required>
+  </div>
+  <div class="input-container row">
+    <label for="endAt" class="input-label">End at</label>
+    <input type="time" id="endAt" name="endAt" class="input-field"
+      [(ngModel)]="meeting.endAt" autocomplete="name" required>
+  </div>
 </div>

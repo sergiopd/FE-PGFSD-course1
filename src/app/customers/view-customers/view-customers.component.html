@@ -13,10 +13,11 @@
   <div class="customer-container">
     <form #viewCustomerForm="ngForm" class="form-container">
       <h3 class="form-title">Edit client</h3>
+      <div id="edited-message" class="message">{{ message }}</div>
       <app-form-customer #customerForm></app-form-customer>
       <div class="button-container">
         <button class="button-action" type="button"
-          (click)="updateCustomer()">Update customer</button>
+          (click)="updateCustomer(viewCustomerForm)">Update customer</button>
         <button class="button-action" type="button"
           (click)="deleteCustomer(customerForm.customer.email, viewCustomerForm)">Delete
           customer</button>

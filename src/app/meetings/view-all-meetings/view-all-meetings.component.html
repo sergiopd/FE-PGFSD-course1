@@ -16,10 +16,11 @@
   <div class="customer-container">
     <form #viewMeetingForm="ngForm" class="form-container">
       <h3 class="form-title">Edit meeting schedule</h3>
+      <div id="edited-message" class="message">{{ message }}</div>
       <app-form-meeting #meetingForm></app-form-meeting>
       <div class="button-container">
         <button class="button-action" type="button"
-          (click)="updateMeeting()">Update meeting</button>
+          (click)="updateMeeting(viewMeetingForm)">Update meeting</button>
         <button class="button-action" type="button"
           (click)="deleteMeeting(meetingForm.meeting.meetID, viewMeetingForm)">Delete
           meeting</button>
